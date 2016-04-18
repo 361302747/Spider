@@ -13,7 +13,6 @@ def socialorzSpider():
         url=url+str(j)+'.php'
         try:
             urlop=urllib.request.urlopen(url,timeout=2)
-            page = page + 1
             res=urlop.read().decode()
             tree = etree.HTML(res)
             itemList=session.query(socialorzItem).all()
@@ -34,6 +33,7 @@ def socialorzSpider():
                     print(e)
                     continue
             id=tree.xpath('/html/body/text()')
+            page = page + 1
             if('File not found' in id):
                 break
         except Exception as e:

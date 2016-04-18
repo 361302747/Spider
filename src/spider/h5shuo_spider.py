@@ -15,7 +15,6 @@ def h5shuoSpider():
         try:
             # 定义初始url
             req = request.Request('http://api.h5shuo.com/apps?o=new&p='+str(page-1))
-            page = page + 1
             response= request.urlopen(req)
             res= response.read().decode()
             jsonObj=json.loads(res)
@@ -50,7 +49,7 @@ def h5shuoSpider():
                 print(newItem.name)
                 myset.add(newItem.url)
                 session.commit()
-
+            page = page + 1
         except Exception as e:
             print(e)
             continue
