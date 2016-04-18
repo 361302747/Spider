@@ -1,5 +1,4 @@
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from src.entity.Item import h5shareItem,h5shuoItem,socialorzItem,iguoguoItem,allItem
 

@@ -2,9 +2,7 @@ import urllib.request
 
 from lxml import etree
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-import  hashlib
 from src.entity.Item import socialorzItem
 
 

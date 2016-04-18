@@ -1,7 +1,5 @@
-import urllib.request
 from urllib import request,parse
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 import json
 from src.entity.Item import h5shareItem
