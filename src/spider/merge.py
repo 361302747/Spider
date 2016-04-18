@@ -1,14 +1,5 @@
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from src.entity.Item import h5shareItem,h5shuoItem,socialorzItem,iguoguoItem,allItem
-
-# 初始化数据库连接:
-engine = create_engine('mysql+mysqlconnector://root:1234@localhost:3306/h5doo')
-# 创建DBSession类型:
-
-DBSession = sessionmaker(bind=engine)
+from src.entity.Item import h5shareItem,h5shuoItem,socialorzItem,iguoguoItem,allItem,session
 set=set()
-session = DBSession()
 h5shareList = session.query(h5shareItem).all()
 for h5share in h5shareList:
     set.add(h5share.url)

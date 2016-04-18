@@ -1,15 +1,7 @@
 import urllib.request
-
 from lxml import etree
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from src.entity.Item import iguoguoItem
+from src.entity.Item import iguoguoItem,session
 
-# 初始化数据库连接:
-engine = create_engine('mysql+mysqlconnector://root:1234@localhost:3306/h5doo')
-# 创建DBSession类型:
-
-DBSession = sessionmaker(bind=engine)
 
 #爬取规则
 set=set();
@@ -24,7 +16,6 @@ while page<1000:
         page = page + 1
         res=urlop.read().decode()
         tree = etree.HTML(res)
-        session = DBSession()
         itemList=session.query(iguoguoItem).all()
         for item in itemList:
             set.add(item.url)

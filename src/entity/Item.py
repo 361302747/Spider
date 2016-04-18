@@ -1,9 +1,14 @@
 # 导入:
 from sqlalchemy import Column, String, create_engine,Integer,TIMESTAMP
 from sqlalchemy.ext.declarative import declarative_base
-
+from sqlalchemy.orm import sessionmaker
 # 创建对象的基类:
 Base = declarative_base()
+#初始化数据库连接:
+engine=create_engine('mysql+mysqlconnector://root:1234@localhost:3306/h5doo')
+# 创建DBSession类型:
+DBSession = sessionmaker(bind=engine)
+session = DBSession()
 
 # 定义User对象:
 class iguoguoItem(Base):
