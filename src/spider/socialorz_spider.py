@@ -7,8 +7,6 @@ from sqlalchemy.orm import sessionmaker
 import  hashlib
 from src.entity.Item import socialorzItem
 
-# 创建对象的基类:
-Base = declarative_base()
 
 # 初始化数据库连接:
 engine = create_engine('mysql+mysqlconnector://root:1234@localhost:3306/h5doo')

@@ -4,11 +4,7 @@ from lxml import etree
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-import  hashlib
 from src.entity.Item import iguoguoItem
-
-# 创建对象的基类:
-Base = declarative_base()
 
 # 初始化数据库连接:
 engine = create_engine('mysql+mysqlconnector://root:1234@localhost:3306/h5doo')

@@ -10,14 +10,15 @@ class iguoguoItem(Base):
     # 表的名字:
     __tablename__ = 'iguoguo_spider'
 
-    # 表的结构:
-    id = Column(Integer,primary_key=True)
+    id = Column(Integer, primary_key=True)
     name = Column(String(100))
     url = Column(String(200))
     cover = Column(String(200))
     brief = Column(String(400))
-    create_date=Column(TIMESTAMP)
-    view=Column(String(20))
+    create_date = Column(TIMESTAMP)
+    view = Column(String(20))
+    keywords = Column(String(50))
+    create_by = Column(String(40))
 
 # 定义h5shareItem对象:
 class h5shareItem(Base):
@@ -25,13 +26,15 @@ class h5shareItem(Base):
     __tablename__ = 'h5share_spider'
 
     # 表的结构:
-    id = Column(Integer,primary_key=True)
+    id = Column(Integer, primary_key=True)
     name = Column(String(100))
     url = Column(String(200))
     cover = Column(String(200))
     brief = Column(String(400))
-    create_date=Column(TIMESTAMP)
-    view=Column(String(20))
+    create_date = Column(TIMESTAMP)
+    view = Column(String(20))
+    keywords = Column(String(50))
+    create_by = Column(String(40))
 
 # 定义socialorz对象:
 class socialorzItem(Base):
@@ -39,19 +42,34 @@ class socialorzItem(Base):
     __tablename__ = 'socialorz_spider'
 
     # 表的结构:
-    id = Column(Integer,primary_key=True)
+    id = Column(Integer, primary_key=True)
     name = Column(String(100))
     url = Column(String(200))
     cover = Column(String(200))
     brief = Column(String(400))
-    create_date=Column(TIMESTAMP)
-    view=Column(String(20))
-    keywords=Column(String(50))
+    create_date = Column(TIMESTAMP)
+    view = Column(String(20))
+    keywords = Column(String(50))
+    create_by = Column(String(40))
 
 # 定义socialorz对象:
 class h5shuoItem(Base):
     # 表的名字:
     __tablename__ = 'h5shuo_spider'
+
+    # 表的结构:
+    id = Column(Integer, primary_key=True)
+    name = Column(String(100))
+    url = Column(String(200))
+    cover = Column(String(200))
+    brief = Column(String(400))
+    create_date = Column(TIMESTAMP)
+    view = Column(String(20))
+    keywords = Column(String(50))
+    create_by = Column(String(40))
+class allItem(Base):
+    # 表的名字:
+    __tablename__ = 'all_spider'
 
     # 表的结构:
     id = Column(Integer,primary_key=True)
