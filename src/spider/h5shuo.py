@@ -1,15 +1,8 @@
-from urllib import request,parse
+from urllib import request
 from lxml import etree
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
 import json
-from src.entity.Item import h5shuoItem
+from src.entity.Item import h5shuoItem,session
 
-# 初始化数据库连接:
-engine = create_engine('mysql+mysqlconnector://root:1234@localhost:3306/h5doo')
-# 创建DBSession类型:
-
-DBSession = sessionmaker(bind=engine)
 
 #爬取规则
 set=set()
@@ -17,8 +10,6 @@ page=1
 j = page
 
 while True:
-    #获取数据库连接
-    session = DBSession()
     itemList = session.query(h5shuoItem).all()
     for h5share in itemList:
         set.add(h5share.url)
