@@ -12,9 +12,6 @@
 * orm框架:sqlalchemy  安装命令：`pip install sqlalchemy`
 * 任务调度：apscheduler 安装命令:`pip install apscheduler(暂未完成)`
 
-#### SVN地址：
-`https://182.254.166.59/svn/h5doo-spider/`
-    
 #### 添加新爬虫说明：
 * 在item中添加实体类
 * 新建spide.py，引入`from src.entity.Item import xxxxItem,session`
